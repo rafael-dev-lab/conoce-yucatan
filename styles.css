@@ -1,4 +1,4 @@
-/* --- VARIABLES GLOBALES --- */
+/* --- VARIABLES GLOBALES (MODO CLARO POR DEFECTO) --- */
 :root {
   --primary: #028090; /* Turquesa cenote */
   --secondary: #d97706; /* Terracota cálido */
@@ -6,10 +6,26 @@
   --light: #f8fafc; /* Fondo claro general */
   --white: #ffffff;
   --card-bg: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --subtitle: #64748b;
+  --text-muted: #475569;
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
   --radius: 12px;
   --font-family:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- VARIABLES PARA MODO OSCURO --- */
+body.dark-theme {
+  --light: #0f172a; /* Fondo muy oscuro */
+  --dark: #f8fafc; /* Texto claro */
+  --card-bg: #1e293b; /* Tarjetas oscuras */
+  --nav-bg: rgba(15, 23, 42, 0.95);
+  --subtitle: #94a3b8;
+  --text-muted: #cbd5e1;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 25px rgba(2, 128, 144, 0.3); /* Resplandor turquesa suave */
 }
 
 /* --- BASE --- */
@@ -20,7 +36,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Scroll leve */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,13 +44,16 @@ body {
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   z-index: 1000;
@@ -42,6 +61,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
 }
 
 .brand {
@@ -49,6 +69,12 @@ body {
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-links {
@@ -71,6 +97,48 @@ body {
 .nav-links a:hover {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
+}
+
+/* BOTÓN DE MODO OSCURO MINIMALISTA (CÍRCULO) */
+.theme-toggle-circle {
+  background: transparent;
+  border: 2px solid var(--dark);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition:
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle-circle:hover {
+  transform: scale(1.15);
+  border-color: var(--primary);
+}
+
+.circle-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Estado visual del círculo en modo oscuro */
+body.dark-theme .theme-toggle-circle {
+  border-color: var(--primary);
+}
+
+body.dark-theme .circle-icon {
+  background-color: var(--primary);
+  transform: scale(0.65);
 }
 
 /* HERO */
@@ -112,14 +180,14 @@ body {
 
 .section-subtitle {
   text-align: center;
-  color: #64748b;
+  color: var(--subtitle);
   margin-bottom: 3rem;
   font-size: 1rem;
 }
 
 /* CULTURA */
 .culture-card {
-  background: var(--white);
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -127,6 +195,9 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .culture-card h3 {
@@ -135,7 +206,11 @@ body {
   margin-bottom: 1rem;
 }
 
-/* GRIND */
+.culture-card p {
+  color: var(--text-muted);
+}
+
+/* GRID */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -150,15 +225,18 @@ body {
   box-shadow: var(--shadow);
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-/* HOVERT PARA TARJETAS*/
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+/* HOVER PARA TARJETAS (ESCRITORIO) */
+@media (min-width: 769px) {
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .card-img {
@@ -179,31 +257,56 @@ body {
 }
 
 .card-text {
-  color: #475569;
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 /* --- FOOTER --- */
 footer {
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: #0f172a;
+  color: #ffffff;
   text-align: center;
   padding: 2rem;
   margin-top: 4rem;
   font-size: 0.9rem;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES (OPTIMIZACIONES PARA MÓVIL) */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
+    padding: 1rem;
   }
+
+  .nav-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .nav-links {
     gap: 1rem;
   }
+
   .hero h1 {
     font-size: 2.5rem;
+  }
+
+  /* SOMBRAS Y BORDES SUTILES PARA PANTALLAS TÁCTILES */
+  .card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  /* Feedback táctil al presionar con el dedo */
+  .card:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .culture-card {
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 }

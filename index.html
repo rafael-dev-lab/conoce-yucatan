@@ -11,13 +11,21 @@
     <!-- NAVBAR -->
     <header class="navbar">
       <a href="#" class="brand">Conoce Yucatán</a>
-      <nav>
+      <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="#cultura">Cultura</a></li>
           <li><a href="#cenotes">Cenotes</a></li>
           <li><a href="#piramides">Pirámides</a></li>
           <li><a href="#playas">Playas</a></li>
         </ul>
+        <!-- BOTÓN MODO OSCURO MINIMALISTA (CÍRCULO) -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle-circle"
+          aria-label="Cambiar tema"
+        >
+          <span class="circle-icon"></span>
+        </button>
       </nav>
     </header>
 
@@ -32,7 +40,7 @@
       <div class="culture-card">
         <h3>Nuestro Yucatán</h3>
         <p>
-          ¿Listo para conectar con la magia dsel sur de México? Sumérgete en
+          ¿Listo para conectar con la magia del sur de México? Sumérgete en
           historias ancestrales, maravíllate con monumentos únicos y déjate
           conquistar por la paz de sus costas y cenotes. Yucatán lo tiene todo
           para regalarte momentos inolvidables. ¡Tu próxima gran historia
@@ -73,7 +81,7 @@
           <div class="card-body">
             <h3 class="card-title">Cenote Santa Bárbara</h3>
             <p class="card-text">
-              Ubicado en Cuzamá, ofrece un recorrido único en truck tradicional
+              Ubicado en Homún, ofrece un recorrido único en truck tradicional
               para visitar tres cenotes de agua azul turquesa.
             </p>
           </div>
@@ -167,5 +175,8 @@
     <footer>
       <p>&copy; 2026 Conoce Yucatán</p>
     </footer>
+
+    <!-- ARCHIVO JAVASCRIPT EXTERNO -->
+    <script src="./script.js"></script>
   </body>
 </html>
