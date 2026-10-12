@@ -1,14 +1,14 @@
-// Selección de elementos del DOM
+// SELECCIOND DE ELEMENTOS
 const themeToggleBtn = document.getElementById("theme-toggle");
 
-// Comprobar preferencia guardada en localStorage
+// MANTENER EN MEMORIA LOCAL LAS PREFERENCIAS
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
   document.body.classList.add("dark-theme");
 }
 
-// Alternar modo claro / oscuro al hacer clic en el círculo
+// ACTIVAR Y DESACTIVAR MODO CLARO Y OSCURO
 themeToggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
 

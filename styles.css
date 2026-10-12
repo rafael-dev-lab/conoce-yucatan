@@ -1,9 +1,9 @@
-/* --- VARIABLES GLOBALES (MODO CLARO POR DEFECTO) --- */
+/* COLORES */
 :root {
-  --primary: #028090; /* Turquesa cenote */
-  --secondary: #d97706; /* Terracota cálido */
-  --dark: #1e293b; /* Color de texto principal */
-  --light: #f8fafc; /* Fondo claro general */
+  --primary: #028090; /* PARA CENOTES */
+  --secondary: #d97706; /* TARJETA PRINCIPAL */
+  --dark: #1e293b; /* PARA EL TEXTO */
+  --light: #f8fafc; /* FONDO */
   --white: #ffffff;
   --card-bg: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.95);
@@ -16,19 +16,19 @@
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* --- VARIABLES PARA MODO OSCURO --- */
+/* MODO OSCURO */
 body.dark-theme {
-  --light: #0f172a; /* Fondo muy oscuro */
-  --dark: #f8fafc; /* Texto claro */
-  --card-bg: #1e293b; /* Tarjetas oscuras */
+  --light: #0f172a; /* FONDO OSCUOR */
+  --dark: #f8fafc; /* TEXTO MAS CLARO */
+  --card-bg: #1e293b; /* TARJETAS EN MODO OSCURO */
   --nav-bg: rgba(15, 23, 42, 0.95);
   --subtitle: #94a3b8;
   --text-muted: #cbd5e1;
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 8px 25px rgba(2, 128, 144, 0.3); /* Resplandor turquesa suave */
+  --shadow-hover: 0 8px 25px rgba(2, 128, 144, 0.3); /* HOVER PARA MODO OSCURO */
 }
 
-/* --- BASE --- */
+/* CONFIG INICIAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,7 +99,7 @@ body {
   border-bottom: 2px solid var(--primary);
 }
 
-/* BOTÓN DE MODO OSCURO MINIMALISTA (CÍRCULO) */
+/* BOTON PARA EL MODO OSCURO */
 .theme-toggle-circle {
   background: transparent;
   border: 2px solid var(--dark);
@@ -131,7 +131,7 @@ body {
     transform 0.3s ease;
 }
 
-/* Estado visual del círculo en modo oscuro */
+/* MODO OSCURO */
 body.dark-theme .theme-toggle-circle {
   border-color: var(--primary);
 }
@@ -231,7 +231,7 @@ body.dark-theme .circle-icon {
   flex-direction: column;
 }
 
-/* HOVER PARA TARJETAS (ESCRITORIO) */
+/* HOVER PARA LAS TARJETAS */
 @media (min-width: 769px) {
   .card:hover {
     transform: translateY(-5px);
@@ -272,7 +272,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* MEDIA QUERIES (OPTIMIZACIONES PARA MÓVIL) */
+/* MOBILE */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -293,7 +293,7 @@ footer {
     font-size: 2.5rem;
   }
 
-  /* SOMBRAS Y BORDES SUTILES PARA PANTALLAS TÁCTILES */
+  /* SOMBRAS Y BORDES */
   .card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(148, 163, 184, 0.2);
