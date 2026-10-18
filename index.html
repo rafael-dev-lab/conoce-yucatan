@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conoce Yucatán</title>
     <!-- CONEXION A CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -31,7 +32,9 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Conoce Yucatán</h1>
+      <div data-aos="zoom-in">
+        <h1>Conoce Yucatán</h1>
+      </div>
     </section>
 
     <!-- SECCION CULTURA -->
@@ -57,7 +60,7 @@
         historia maya se conectan.
       </p>
       <div class="grid-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOna6nP8ISG6OhEbJnYTfdJq2omNd2YQefC4sCMKCuOQ&s=10"
             alt="Hacienda Mucuyché"
@@ -72,7 +75,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ-y9pcpVQtePincBUDnHS2RXl1mY5WcCdQnS4XkZneozevHR1SfCNE0OH&s=10"
             alt="Cenote Santa Bárbara"
@@ -97,7 +100,7 @@
         astrónomicos del Mayab.
       </p>
       <div class="grid-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://cobasunset.info/wp-content/uploads/2022/02/Chichen-1.jpg"
             alt="Chichén Itzá"
@@ -112,7 +115,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://www.inah.gob.mx/images/zonas/yucatan/uxmal/20220810_za_uxmal_head.jpg"
             alt="Uxmal"
@@ -138,7 +141,7 @@
         descansar.
       </p>
       <div class="grid-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://www.yucatan.gob.mx/docs/galerias/progreso/progreso0.jpg"
             alt="Progreso"
@@ -154,7 +157,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="3000">
           <img
             src="https://en-yucatan.com.mx/fotos/playas-yucatecas/telchac/telchac-puerto-letras.jpg"
             alt="Telchac Puerto"
@@ -171,12 +174,23 @@
       </div>
     </section>
 
+    <!-- CONTADOR DE CLICS -->
+    <div class="counter-container">
+      <button id="click-counter-btn" class="counter-btn">
+        Clics: <span id="click-count">0</span>
+      </button>
+    </div>
+
     <!-- FOOTER -->
     <footer>
       <p>&copy; 2026 Conoce Yucatán</p>
     </footer>
 
     <!-- CONEXION JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -18,7 +18,7 @@
 
 /* MODO OSCURO */
 body.dark-theme {
-  --light: #0f172a; /* FONDO OSCUOR */
+  --light: #0f172a; /* FONDO OSCURO */
   --dark: #f8fafc; /* TEXTO MAS CLARO */
   --card-bg: #1e293b; /* TARJETAS EN MODO OSCURO */
   --nav-bg: rgba(15, 23, 42, 0.95);
@@ -262,13 +262,47 @@ body.dark-theme .circle-icon {
   line-height: 1.5;
 }
 
+/* CONTADOR DE CLICS */
+.counter-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 1rem 0;
+}
+
+.counter-btn {
+  background-color: var(--card-bg);
+  color: var(--dark);
+  border: 2px solid var(--primary);
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.counter-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-hover);
+}
+
+.counter-btn:active {
+  transform: translateY(0);
+}
+
 /* --- FOOTER --- */
 footer {
   background-color: #0f172a;
   color: #ffffff;
   text-align: center;
   padding: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
 }
 
