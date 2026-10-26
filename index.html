@@ -4,24 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conoce Yucatán</title>
-    <!-- CONEXION A CSS -->
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
     <!-- NAVBAR -->
     <header class="navbar">
       <a href="#" class="brand">Conoce Yucatán</a>
-      <nav class="nav-container">
+
+      <nav class="nav-container" aria-label="Navegación principal">
         <ul class="nav-links">
           <li><a href="#cultura">Cultura</a></li>
           <li><a href="#cenotes">Cenotes</a></li>
           <li><a href="#piramides">Pirámides</a></li>
           <li><a href="#playas">Playas</a></li>
         </ul>
+
         <!-- MODO OSCURO -->
         <button
           id="theme-toggle"
+          type="button"
           class="theme-toggle-circle"
           aria-label="Cambiar tema"
         >
@@ -30,155 +43,411 @@
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div data-aos="zoom-in">
-        <h1>Conoce Yucatán</h1>
-      </div>
-    </section>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div data-aos="zoom-in">
+          <h1>Conoce Yucatán</h1>
+        </div>
+      </section>
 
-    <!-- SECCION CULTURA -->
-    <section id="cultura" class="section">
-      <h2 class="section-title">Nuestra Peninsula</h2>
-      <div class="culture-card">
-        <h3>Nuestro Yucatán</h3>
-        <p>
-          ¿Listo para conectar con la magia del sur de México? Sumérgete en
-          historias ancestrales, maravíllate con monumentos únicos y déjate
-          conquistar por la paz de sus costas y cenotes. Yucatán lo tiene todo
-          para regalarte momentos inolvidables. ¡Tu próxima gran historia
-          comienza aquí!
+      <!-- CULTURA -->
+      <section id="cultura" class="section">
+        <h2 class="section-title">Nuestra Península</h2>
+
+        <div class="culture-card">
+          <h3>Nuestro Yucatán</h3>
+
+          <p>
+            ¿Listo para conectar con la magia del sur de México? Sumérgete en
+            historias ancestrales, maravíllate con monumentos únicos y déjate
+            conquistar por la paz de sus costas y cenotes. Yucatán lo tiene todo
+            para regalarte momentos inolvidables. ¡Tu próxima gran historia
+            comienza aquí!
+          </p>
+        </div>
+      </section>
+
+      <!-- CENOTES -->
+      <section id="cenotes" class="section">
+        <h2 class="section-title">Cenotes</h2>
+
+        <p class="section-subtitle">
+          Portales cristalinos de belleza mística donde la naturaleza y la
+          historia maya se conectan.
         </p>
+
+        <div class="grid-container">
+          <!-- HACIENDA MUCUYCHÉ -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOna6nP8ISG6OhEbJnYTfdJq2omNd2YQefC4sCMKCuOQ&s=10"
+              alt="Hacienda Mucuyché"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Hacienda Mucuyché</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  Famosa por sus cenotes semiabiertos y el histórico canal de
+                  agua rodeado de naturaleza y vestigios henequeneros.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Hacienda Mucuyché"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- CENOTE SANTA BÁRBARA -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ-y9pcpVQtePincBUDnHS2RXl1mY5WcCdQnS4XkZneozevHR1SfCNE0OH&s=10"
+              alt="Cenote Santa Bárbara"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Cenote Santa Bárbara</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  Ubicado en Homún, ofrece un recorrido único en truck
+                  tradicional para visitar tres cenotes de agua azul turquesa.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Cenote Santa Bárbara"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PIRÁMIDES -->
+      <section id="piramides" class="section">
+        <h2 class="section-title">Pirámides</h2>
+
+        <p class="section-subtitle">
+          Maravíllate con la majestuosidad arquitectónica y los secretos
+          astronómicos del Mayab.
+        </p>
+
+        <div class="grid-container">
+          <!-- CHICHÉN ITZÁ -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://cobasunset.info/wp-content/uploads/2022/02/Chichen-1.jpg"
+              alt="Chichén Itzá"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Chichén Itzá</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  Una de las 7 Maravillas del Mundo Moderno. La pirámide de
+                  Kukulkán refleja la precisión astronómica y matemática de los
+                  mayas.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Chichén Itzá"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- UXMAL -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://www.inah.gob.mx/images/zonas/yucatan/uxmal/20220810_za_uxmal_head.jpg"
+              alt="Uxmal"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Uxmal</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  Joya del estilo arquitectónico Puuc, destacada por la
+                  impresionante Pirámide del Adivino y sus detallados relieves
+                  en piedra.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Uxmal"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PLAYAS -->
+      <section id="playas" class="section">
+        <h2 class="section-title">Playas</h2>
+
+        <p class="section-subtitle">
+          Aguas serenas, arena clara y el ambiente único de la costa yucateca
+          para descansar.
+        </p>
+
+        <div class="grid-container">
+          <!-- PROGRESO -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://www.yucatan.gob.mx/docs/galerias/progreso/progreso0.jpg"
+              alt="Progreso"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Progreso</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  El puerto principal del estado. Su malecón moderno, ambiente
+                  alegre y brisa marina son ideales para disfrutar un día de
+                  descanso.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Progreso"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- TELCHAC PUERTO -->
+          <article class="card" data-aos="fade-up" data-aos-duration="3000">
+            <img
+              src="https://en-yucatan.com.mx/fotos/playas-yucatecas/telchac/telchac-puerto-letras.jpg"
+              alt="Telchac Puerto"
+              class="card-img"
+            />
+
+            <div class="card-body">
+              <h3 class="card-title">Telchac Puerto</h3>
+
+              <div class="card-content-wrapper">
+                <p class="card-text">
+                  Un rincón tranquilo con playas de arena clara y aguas serenas,
+                  perfecto para relajarse lejos del bullicio.
+                </p>
+
+                <a
+                  href="https://www.yucatan.travel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-arrow-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Visitar sitio turístico"
+                  aria-label="Visitar sitio turístico de Telchac Puerto"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- INTERACCIÓN 1: ACCORDION DE BOOTSTRAP -->
+      <section id="preguntas" class="section">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+
+        <p class="section-subtitle">
+          Descubre información útil antes de viajar por Yucatán.
+        </p>
+
+        <div class="accordion" id="travelAccordion">
+          <!-- PREGUNTA 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="questionOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#answerOne"
+                aria-expanded="true"
+                aria-controls="answerOne"
+              >
+                ¿Cuál es la mejor época para visitar Yucatán?
+              </button>
+            </h3>
+
+            <div
+              id="answerOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="questionOne"
+              data-bs-parent="#travelAccordion"
+            >
+              <div class="accordion-body">
+                Entre noviembre y marzo suelen presentarse temperaturas más
+                agradables para recorrer zonas arqueológicas, cenotes y
+                ciudades.
+              </div>
+            </div>
+          </div>
+
+          <!-- PREGUNTA 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="questionTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#answerTwo"
+                aria-expanded="false"
+                aria-controls="answerTwo"
+              >
+                ¿Qué debo llevar para visitar los cenotes?
+              </button>
+            </h3>
+
+            <div
+              id="answerTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="questionTwo"
+              data-bs-parent="#travelAccordion"
+            >
+              <div class="accordion-body">
+                Lleva traje de baño, toalla, calzado antideslizante y ropa
+                cómoda. Respeta las indicaciones del lugar sobre duchas,
+                bloqueadores y repelentes.
+              </div>
+            </div>
+          </div>
+
+          <!-- PREGUNTA 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="questionThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#answerThree"
+                aria-expanded="false"
+                aria-controls="answerThree"
+              >
+                ¿Qué platillos típicos debo probar?
+              </button>
+            </h3>
+
+            <div
+              id="answerThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="questionThree"
+              data-bs-parent="#travelAccordion"
+            >
+              <div class="accordion-body">
+                Algunos de los platillos más representativos son la cochinita
+                pibil, los panuchos, los salbutes, los papadzules y la sopa de
+                lima.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOAST -->
+      <section class="section text-center">
+        <h2 class="section-title">¿Sabías que...?</h2>
+
+        <p class="section-subtitle">Conoce datos interesantes sobre Yucatán.</p>
+
+        <button
+          id="curiosity-btn"
+          type="button"
+          class="btn btn-warning fw-bold px-4 py-3"
+        >
+          Descubre un dato curioso 💡
+        </button>
+      </section>
+
+      <!-- CONTADOR DE CLICS -->
+      <div class="counter-container">
+        <button id="click-counter-btn" type="button" class="counter-btn">
+          Clics:
+          <span id="click-count">0</span>
+        </button>
       </div>
-    </section>
+    </main>
 
-    <!-- SECCION CENOTES -->
-    <section id="cenotes" class="section">
-      <h2 class="section-title">Cenotes</h2>
-      <p class="section-subtitle">
-        Portales cristalinos de belleza mística donde la naturaleza y la
-        historia maya se conectan.
-      </p>
-      <div class="grid-container">
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOna6nP8ISG6OhEbJnYTfdJq2omNd2YQefC4sCMKCuOQ&s=10"
-            alt="Hacienda Mucuyché"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Hacienda Mucuyché</h3>
-            <p class="card-text">
-              Famosa por sus cenotes semiabiertos y el histórico canal de agua
-              rodeado de naturaleza y vestigios henequeneros.
-            </p>
-          </div>
+    <!-- CONTENEDOR -->
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 1100"
+    >
+      <div
+        id="curiosityToast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <strong class="me-auto"> 💡 Dato curioso de Yucatán </strong>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Cerrar notificación"
+          ></button>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ-y9pcpVQtePincBUDnHS2RXl1mY5WcCdQnS4XkZneozevHR1SfCNE0OH&s=10"
-            alt="Cenote Santa Bárbara"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Cenote Santa Bárbara</h3>
-            <p class="card-text">
-              Ubicado en Homún, ofrece un recorrido único en truck tradicional
-              para visitar tres cenotes de agua azul turquesa.
-            </p>
-          </div>
+        <div class="toast-body" id="curiosity-text">
+          Descubre información interesante de Yucatán.
         </div>
       </div>
-    </section>
-
-    <!-- SECCION PIRAMIDES -->
-    <section id="piramides" class="section">
-      <h2 class="section-title">Pirámides</h2>
-      <p class="section-subtitle">
-        Maravíllate con la majestuosidad arquitectónica y los secretos
-        astrónomicos del Mayab.
-      </p>
-      <div class="grid-container">
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://cobasunset.info/wp-content/uploads/2022/02/Chichen-1.jpg"
-            alt="Chichén Itzá"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Chichén Itzá</h3>
-            <p class="card-text">
-              Una de las 7 Maravillas del Mundo Moderno. La pirámide de Kukulkán
-              refleja la precisión astronómica y matemática de los mayas.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://www.inah.gob.mx/images/zonas/yucatan/uxmal/20220810_za_uxmal_head.jpg"
-            alt="Uxmal"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Uxmal</h3>
-            <p class="card-text">
-              Joya del estilo arquitectónico Puuc, destacada por la
-              impresionante Pirámide del Adivino y sus detallados relieves en
-              piedra.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCION PLAYAS -->
-    <section id="playas" class="section">
-      <h2 class="section-title">Playas</h2>
-      <p class="section-subtitle">
-        Aguas serenas, arena clara y el ambiente único de la costa yucateca para
-        descansar.
-      </p>
-      <div class="grid-container">
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://www.yucatan.gob.mx/docs/galerias/progreso/progreso0.jpg"
-            alt="Progreso"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Progreso</h3>
-            <p class="card-text">
-              El puerto principal del estado. Su malecón moderno, ambiente
-              alegre y brisa marina son ideales para disfrutar un día de
-              descanso.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-duration="3000">
-          <img
-            src="https://en-yucatan.com.mx/fotos/playas-yucatecas/telchac/telchac-puerto-letras.jpg"
-            alt="Telchac Puerto"
-            class="card-img"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Telchac Puerto</h3>
-            <p class="card-text">
-              Un rincón tranquilo con playas de arena clara y aguas serenas,
-              perfecto para relajarse lejos del bullicio.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTADOR DE CLICS -->
-    <div class="counter-container">
-      <button id="click-counter-btn" class="counter-btn">
-        Clics: <span id="click-count">0</span>
-      </button>
     </div>
 
     <!-- FOOTER -->
@@ -186,11 +455,13 @@
       <p>&copy; 2026 Conoce Yucatán</p>
     </footer>
 
-    <!-- CONEXION JS -->
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+
+    <!-- JAVASCRIPT PROPIO -->
     <script src="./script.js"></script>
   </body>
 </html>

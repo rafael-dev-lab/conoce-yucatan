@@ -1,34 +1,41 @@
-/* COLORES */
+/* =VARIABLES CUSTOM */
+
 :root {
-  --primary: #028090; /* PARA CENOTES */
-  --secondary: #d97706; /* TARJETA PRINCIPAL */
-  --dark: #1e293b; /* PARA EL TEXTO */
-  --light: #f8fafc; /* FONDO */
+  --primary: #028090;
+  --secondary: #d97706;
+  --dark: #1e293b;
+  --light: #f8fafc;
   --white: #ffffff;
   --card-bg: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.95);
   --subtitle: #64748b;
   --text-muted: #475569;
+
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+
   --radius: 12px;
+
   --font-family:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* MODO OSCURO */
+
 body.dark-theme {
-  --light: #0f172a; /* FONDO OSCURO */
-  --dark: #f8fafc; /* TEXTO MAS CLARO */
-  --card-bg: #1e293b; /* TARJETAS EN MODO OSCURO */
+  --light: #0f172a;
+  --dark: #f8fafc;
+  --card-bg: #1e293b;
   --nav-bg: rgba(15, 23, 42, 0.95);
   --subtitle: #94a3b8;
   --text-muted: #cbd5e1;
+
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 8px 25px rgba(2, 128, 144, 0.3); /* HOVER PARA MODO OSCURO */
+  --shadow-hover: 0 8px 25px rgba(2, 128, 144, 0.3);
 }
 
-/* CONFIG INICIAL */
+/* CONFIGURACION BASE */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,6 +44,7 @@ body.dark-theme {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -44,23 +52,31 @@ body {
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
 /* NAVBAR */
-.navbar {
+
+header.navbar {
   position: sticky;
   top: 0;
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 1rem 2rem;
+  margin-bottom: 0;
+
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
   transition: background-color 0.3s ease;
 }
 
@@ -71,6 +87,10 @@ body {
   text-decoration: none;
 }
 
+.brand:hover {
+  color: var(--primary);
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -79,38 +99,52 @@ body {
 
 .nav-links {
   display: flex;
-  list-style: none;
+  align-items: center;
   gap: 1.5rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--dark);
+  text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
+
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+
   transition:
     color 0.3s ease,
-    border-bottom 0.3s ease;
-  padding-bottom: 4px;
+    border-color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--primary);
-  border-bottom: 2px solid var(--primary);
+  border-bottom-color: var(--primary);
 }
 
-/* BOTON PARA EL MODO OSCURO */
+/* =MODO OSCURO */
+
 .theme-toggle-circle {
   background: transparent;
   border: 2px solid var(--dark);
+
   width: 26px;
   height: 26px;
+  min-width: 26px;
+
   border-radius: 50%;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
+
   transition:
     border-color 0.3s ease,
     transform 0.2s ease;
@@ -124,14 +158,15 @@ body {
 .circle-icon {
   width: 12px;
   height: 12px;
+
   border-radius: 50%;
   background-color: var(--dark);
+
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
 }
 
-/* MODO OSCURO */
 body.dark-theme .theme-toggle-circle {
   border-color: var(--primary);
 }
@@ -142,18 +177,24 @@ body.dark-theme .circle-icon {
 }
 
 /* HERO */
+
 .hero {
   position: relative;
   height: 75dvh;
+  min-height: 400px;
+
   background:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1600&q=80")
-      center/cover no-repeat;
+      center / cover no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   text-align: center;
   color: var(--white);
+
   padding: 0 1rem;
 }
 
@@ -161,10 +202,14 @@ body.dark-theme .circle-icon {
   font-size: 3.8rem;
   font-weight: 800;
   letter-spacing: -1px;
+
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  margin-bottom: 0;
 }
 
-/* SECCION */
+/* GENERAL */
+
 .section {
   padding: 5rem 2rem;
   max-width: 1100px;
@@ -174,27 +219,35 @@ body.dark-theme .circle-icon {
 .section-title {
   text-align: center;
   font-size: 2rem;
+  font-weight: 700;
   color: var(--dark);
+
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--subtitle);
+
   margin-bottom: 3rem;
   font-size: 1rem;
 }
 
-/* CULTURA */
+/* CUKTURA */
+
 .culture-card {
-  background: var(--card-bg);
+  background-color: var(--card-bg);
+
   padding: 2.5rem;
   border-radius: var(--radius);
+
   box-shadow: var(--shadow);
   border-left: 6px solid var(--secondary);
+
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -202,36 +255,90 @@ body.dark-theme .circle-icon {
 
 .culture-card h3 {
   font-size: 1.5rem;
+  font-weight: 700;
   color: var(--secondary);
+
   margin-bottom: 1rem;
 }
 
 .culture-card p {
   color: var(--text-muted);
+  margin-bottom: 0;
 }
 
-/* GRID */
+/* GRID DE CARDS */
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+
   gap: 2rem;
 }
 
-/* TARJETAS */
+/* CARDS */
+
 .card {
   background-color: var(--card-bg);
   border-radius: var(--radius);
+
+  border: none;
   overflow: hidden;
+
   box-shadow: var(--shadow);
+
+  display: flex;
+  flex-direction: column;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     background-color 0.3s ease;
+}
+
+.card-img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+
   display: flex;
   flex-direction: column;
 }
 
-/* HOVER PARA LAS TARJETAS */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.card-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.card-text {
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  margin-bottom: 0;
+}
+
+/* HOVER DE TARJETAS */
+
 @media (min-width: 769px) {
   .card:hover {
     transform: translateY(-5px);
@@ -239,56 +346,246 @@ body.dark-theme .circle-icon {
   }
 }
 
-.card-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+/* BOTONES DE CARDS */
+
+.btn-arrow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  border-radius: 50%;
+
+  background-color: var(--primary);
+  color: var(--white);
+
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-.card-body {
+.btn-arrow-link:hover {
+  background-color: var(--secondary);
+  color: var(--white);
+
+  transform: scale(1.1);
+}
+
+/* ACORDEON */
+
+#travelAccordion {
+  max-width: 850px;
+  margin: 0 auto;
+
+  --bs-accordion-bg: var(--card-bg);
+  --bs-accordion-color: var(--dark);
+  --bs-accordion-border-color: rgba(148, 163, 184, 0.25);
+
+  --bs-accordion-btn-bg: var(--card-bg);
+  --bs-accordion-btn-color: var(--dark);
+
+  --bs-accordion-active-bg: rgba(2, 128, 144, 0.1);
+  --bs-accordion-active-color: var(--primary);
+
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(2, 128, 144, 0.2);
+}
+
+#travelAccordion .accordion-item {
+  background-color: var(--card-bg);
+  color: var(--dark);
+
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  overflow: hidden;
+  box-shadow: var(--shadow);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#travelAccordion .accordion-button {
+  font-size: 1rem;
+  font-weight: 600;
+
+  padding: 1.3rem;
+
+  background-color: var(--card-bg);
+  color: var(--dark);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#travelAccordion .accordion-button:not(.collapsed) {
+  background-color: rgba(2, 128, 144, 0.1);
+  color: var(--primary);
+
+  box-shadow: none;
+}
+
+#travelAccordion .accordion-button:hover {
+  color: var(--primary);
+}
+
+#travelAccordion .accordion-body {
   padding: 1.5rem;
-  flex-grow: 1;
+
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-.card-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+/* ACCORDION EN MODO OSCURO */
+
+body.dark-theme #travelAccordion .accordion-button {
   color: var(--dark);
 }
 
-.card-text {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
+body.dark-theme #travelAccordion .accordion-button:not(.collapsed) {
+  color: #2dd4bf;
+  background-color: rgba(2, 128, 144, 0.15);
 }
 
-/* CONTADOR DE CLICS */
+body.dark-theme #travelAccordion .accordion-button::after {
+  filter: invert(1) grayscale(1);
+}
+
+/* FLECHA Y ACORDEON */
+
+.toast-container {
+  z-index: 1100;
+}
+
+#curiosityToast {
+  background-color: var(--card-bg);
+  color: var(--dark);
+
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-hover);
+
+  overflow: hidden;
+
+  --bs-toast-bg: var(--card-bg);
+  --bs-toast-color: var(--dark);
+  --bs-toast-header-bg: var(--card-bg);
+  --bs-toast-header-color: var(--dark);
+}
+
+#curiosityToast .toast-header {
+  background-color: var(--card-bg);
+  color: var(--dark);
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+
+  padding: 1rem;
+}
+
+#curiosityToast .toast-header strong {
+  color: var(--primary);
+}
+
+#curiosityToast .toast-body {
+  color: var(--text-muted);
+
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* TOAST EN MODO OSCURO */
+
+body.dark-theme #curiosityToast {
+  background-color: var(--card-bg);
+  color: var(--dark);
+}
+
+body.dark-theme #curiosityToast .btn-close {
+  filter: invert(1) grayscale(1);
+}
+
+/* BOTON DE DATOS */
+
+#curiosity-btn {
+  background-color: var(--secondary);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+#curiosity-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+#curiosity-btn:active {
+  transform: translateY(0);
+}
+
+/* CONTADOR */
+
 .counter-container {
   display: flex;
   justify-content: center;
-  margin: 3rem 0 1rem 0;
+
+  margin: 3rem 0 1rem;
 }
 
 .counter-btn {
   background-color: var(--card-bg);
   color: var(--dark);
+
   border: 2px solid var(--primary);
-  border-radius: 8px; /* Bordes ligeramente redondeados */
+  border-radius: 8px;
+
   padding: 0.75rem 1.5rem;
+
   font-size: 1rem;
   font-weight: 700;
+
   cursor: pointer;
   box-shadow: var(--shadow);
+
   transition:
     transform 0.2s ease,
     background-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    color 0.3s ease;
 }
 
 .counter-btn:hover {
   transform: translateY(-2px);
+
   background-color: var(--primary);
   color: var(--white);
+
   box-shadow: var(--shadow-hover);
 }
 
@@ -296,21 +593,31 @@ body.dark-theme .circle-icon {
   transform: translateY(0);
 }
 
-/* --- FOOTER --- */
+/* FOOTER */
+
 footer {
   background-color: #0f172a;
   color: #ffffff;
+
   text-align: center;
+
   padding: 2rem;
   margin-top: 2rem;
+
   font-size: 0.9rem;
 }
 
-/* MOBILE */
+footer p {
+  margin-bottom: 0;
+}
+
+/* TABLET Y MOBILE */
+
 @media (max-width: 768px) {
-  .navbar {
+  header.navbar {
     flex-direction: column;
     gap: 0.8rem;
+
     padding: 1rem;
   }
 
@@ -321,26 +628,131 @@ footer {
 
   .nav-links {
     gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    height: 60dvh;
+    min-height: 350px;
   }
 
   .hero h1 {
     font-size: 2.5rem;
   }
 
-  /* SOMBRAS Y BORDES */
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .culture-card {
+    padding: 1.5rem;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
   .card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(148, 163, 184, 0.2);
   }
 
-  /* Feedback táctil al presionar con el dedo */
   .card:active {
     transform: scale(0.98);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
 
+  #travelAccordion .accordion-button {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  #travelAccordion .accordion-body {
+    padding: 1rem;
+  }
+
+  #curiosityToast {
+    max-width: 100%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  header.navbar {
+    padding: 0.8rem;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 0.7rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 1.2rem;
+  }
+
   .culture-card {
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.2rem;
+  }
+
+  #curiosity-btn {
+    width: 100%;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
